@@ -1,5 +1,19 @@
-#newsArticles {
-  h5 {
-    color: salmon;
+.news__article {
+  list-style-type: none;
+
+  &--title {
+    color: darkblue;
+    text-decoration: none;
+
+    &:hover, &:visited {
+      opacity: .75 ;
+    }
   }
-}
+
+  &--source{
+    display: flex;
+    margin: .5rem 0;
+    font-size: .75rem;
+  }
+
+}/*end news__article*/

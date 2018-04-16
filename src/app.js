@@ -25,6 +25,8 @@ fetch(newsReq)
     .then(json)
     .then(function (data){
         const newsArticles = data.articles;
+        const ul = document.getElementById('news__articles');
+        const baseClass = "news__article";
         for (let i = 0; i < newsArticles.length; i++){
             for (let i = 0; i < newsArticles.length; i++){
                 //elements to add html structure
@@ -43,15 +45,21 @@ fetch(newsReq)
                     sourceUrl = newsArticles[i].url
                 ;
 
+                //inject scss classes
+                li.classList.add(baseClass);
+                a.classList.add(baseClass + "--title");
+                pDesc.classList.add(baseClass + "--desc");
+                aSource.classList.add(baseClass + "--source");
 
+                //inject content
                 a.href = sourceUrl;
+                a.setAttribute('target', '_blank');
                 a.innerHTML = newsTitle;
                 pDesc.innerHTML = newsDesc;
                 aSource.href = sourceName;
                 aSource.innerHTML = sourceName;
 
-
-                const ul = document.getElementById("news__article");
+                //append elements to DOM
                 append(h3, a);
                 append(li, h3);
                 append(pDesc, aSource);
