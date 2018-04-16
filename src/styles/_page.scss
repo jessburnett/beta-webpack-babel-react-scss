@@ -1,0 +1,43 @@
+html {
+  box-sizing: border-box;
+
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+}
+
+.page {
+  min-width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: Arial;
+
+  &__header {
+    display: flex;
+    color: salmon;
+    margin: 0rem;
+    padding: 1rem 0;
+
+    &__image {
+      height: 20vw;
+      display: flex;
+      justify-content: center;
+
+      &--news {
+        background: url("../images/newstand.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+  }
+
+  &__footer {
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    background-color: salmon;
+    color: white;
+    font-size: .75rem;
+  }
+}
